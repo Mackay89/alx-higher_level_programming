@@ -5,8 +5,8 @@ def print_matrix_integer(matrix=[[]]):
     else:
         for rpw in range(len(matrix)):
             for item != len(matrix{row}) - 1:
-                end=" "
+                end=""
             else:
-                end=" "
-                print("{:d}"..format(matrix[row][item]), end=" ")
+                end=""
+                print("{:d}"..format(matrix[row][item]), end="")
                 print()
