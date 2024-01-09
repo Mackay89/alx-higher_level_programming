@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if c < 1:
         print("{} arguments.".format(c))
     elif c == 1:
-        print("{} arguments:".format(c))
+        print("{} argument:".format(c))
     else:
         print("{} arguments:".format(c))
     for i in range(c):
