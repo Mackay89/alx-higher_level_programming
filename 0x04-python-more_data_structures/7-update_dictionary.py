@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    new_diconary = a_dictionary.copy()
-    new_dictionary[key] = value
-    return new_dictionary
+    a_dictionary[keys] = value
+    return a_dictionary
 
