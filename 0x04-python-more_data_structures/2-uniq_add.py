@@ -2,6 +2,6 @@
 def uniq_add(my_list=[]):
     new_list = ()
     sum = 0
-    for num in set(my_lis)t:
+    for num in set(my_list:
         sum += num
     return sum
