@@ -2,8 +2,8 @@
 def search_replace(my_list, search, replace):
     new_list = []
     for idx in range(len(my_list)):
-        if new_list[idx] == search:
+        if new_list[i] == search:
             new_list.append(replace)
         else:
-            new_list.append(new_list[idx])
+            new_list.append(new_list[i])
     return new_list
