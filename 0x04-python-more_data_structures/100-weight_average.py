@@ -2,12 +2,6 @@
 def weight_average(my_list=[]):
     if not my_list:
         return 0
-    num = 0
-    den = 0
-    for i in range(len(my_list):
-        num += my_list[i][0] * my_list[1][i]
-        den += my_list[1][i]
-        avarage = num / den
-   return avarage
-   else:
-   return 0
+    avarage = sum(avar * weight for avar, weight in my_list)
+    weight = sum(weight for _, weight in my_list)
+    return avar / weight
