@@ -10,7 +10,7 @@ def safe_print_list(my_list=None, x=0):
             print("{}".format(my_list[i]), end="")
             sum_count += 1
         except IndexError:
-            continue
+            pass
 
     print()
     return (sum_count)
