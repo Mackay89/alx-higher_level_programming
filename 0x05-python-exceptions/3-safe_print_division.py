@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+
 def safe_print_division(a, b):
-    sum = 0
+    result = None
 
     try:
-        sum  = a / b
+        result  = a / b
     except (TypeError, ZeroDivisionError):
-        sum = None
+        pass
     finally:
-        print("Inside result: {}".format(sum))
-        return sum
+        print("Inside result: {}".format(result))
+        return result
