@@ -41,12 +41,28 @@ class Square:
 
     @property
     def size(self):
-        """Getter method for size."""
+        """
+        Getter method for size.
+
+        Returns:
+            int: The size of the square.
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """setter method for size."""
+        """
+        setter method for size.
+
+        Args:
+            value (int): The size of the square.
+
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
+        """
+
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -56,12 +72,27 @@ class Square:
 
     @property
     def posision(self):
-        """Getter method for position."""
+        """
+        Getter method for position.
+
+        Returns:
+            tuple: The position of the square.
+        """
+
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Setter method for position."""
+        """
+        Setter method for position.
+
+        Args:
+            value (tuple): The position of the square.
+
+        Raises:
+            TypeError: If position is not a tuple of 2 positive integer.
+        """
+
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(i, int) for i in value) or
                 not all(i >= 0 for i in value)):
@@ -81,16 +112,18 @@ class Square:
 
     def my_print(self):
         """
-        print a square.
+        print a square with the character '#'.
 
-
-        Return:
-            None
+        If size is equal to to 0, print an empty line.
+        Use position to add space.
         """
+
         if self.size == 0:
             print()
         else:
             print('\n' * self.__position[1], end='')
             for i in range(self.__size):
                 print(' ' * self.__position[0], end='')
-                print('#' *self.__size)
+                print('#' * self.__size)
+
+
