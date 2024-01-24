@@ -9,7 +9,7 @@ with a specified size and position.
 
 class Square:
     """
-    Represent a square.
+    Represents a square.
 
 
     Attributes:
@@ -21,6 +21,7 @@ class Square:
         size (property): Getter and setter for size.
         position (property): Getter and setter for position.
         area(self): Calculate the area of the square.
+        my_print(self): Print the square with the character '#'.
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -42,7 +43,7 @@ class Square:
     @property
     def size(self):
         """
-        Getter method for size.
+        Getter for size.
 
         Returns:
             int: The size of the square.
@@ -52,7 +53,7 @@ class Square:
     @size.setter
     def size(self, value):
         """
-        setter method for size.
+        setter for size.
 
         Args:
             value (int): The size of the square.
@@ -73,7 +74,7 @@ class Square:
     @property
     def posision(self):
         """
-        Getter method for position.
+        Getter for position.
 
         Returns:
             tuple: The position of the square.
@@ -84,7 +85,7 @@ class Square:
     @position.setter
     def position(self, value):
         """
-        Setter method for position.
+        Setter for position.
 
         Args:
             value (tuple): The position of the square.
@@ -115,7 +116,7 @@ class Square:
         print a square with the character '#'.
 
         If size is equal to to 0, print an empty line.
-        Use position to add space.
+        Use position to add spaces.
         """
 
         if self.size == 0:
