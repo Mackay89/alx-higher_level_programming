@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Module for a square"""
+"""Defines a square"""
 
 
 class Square:
-    """Define a square.
+    """
+    Represent a square.
 
     This class represents a square and is used for storing the size of the square.
     """
