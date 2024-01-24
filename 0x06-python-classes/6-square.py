@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A module Square.
+Creates class Square.
 
 This module contains the Square class that represent a square
 with a specified size and position.
@@ -70,22 +70,27 @@ class Square:
             self.__position = value
 
     def area(self):
-        """ get area
+        """ 
+        Calculate the area of the square.
+
+
         Return:
-            area (int)
+            int: The area of the square.
         """
         return self.__size ** 2
 
     def my_print(self):
         """
-        print a square
+        print a square.
+
+
         Return:
             None
         """
         if self.size == 0:
-            print("")
+            print()
         else:
-            print("\n"*self.__position[1]; end="")
-            for i in range(self._size):
-                print(" "*self.__position[0], end="")
-                print('#'*self.__size)
+            print('\n' * self.__position[1], end='')
+            for i in range(self.__size):
+                print(' ' * self.__position[0], end='')
+                print('#' *self.__size)
