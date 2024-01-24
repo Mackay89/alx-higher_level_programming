@@ -13,7 +13,7 @@ class Square:
         Initialize the Square instance with given size.
 
         args:
-            size (int: The size of the square.
+            size (int): The size of the square.
 
         Return:
             None
