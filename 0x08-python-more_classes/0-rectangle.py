@@ -3,8 +3,11 @@
 Defines a Rectangle class.
 """
 
+
 class Rectangle:
     """
-    Empty class Rectangle.
+    This class represent a Rectangle.
     """
+
+
     pass
