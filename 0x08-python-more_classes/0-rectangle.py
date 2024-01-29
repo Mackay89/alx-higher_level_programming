@@ -7,4 +7,4 @@ class Rectangle:
     """
     Class that defines elements of a rectangle.
     """
-    pass
+pass
