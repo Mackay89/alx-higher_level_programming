@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Defines a Rectangle class.
+Defines a rectangle class.
 """
 
 
 class Rectangle:
     """
-    This class represent a Rectangle.
+    This class represent a rectangle.
     """
 
 
