@@ -81,7 +81,7 @@ class Rectangle:
 
         Represents the rectangle with the # character.
         """
-        if self.__width == 0 or self.__height == 0:
+         if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect = []
@@ -102,5 +102,6 @@ class Rectangle:
         """
         Print a massage for every deletion of a rectangle.
         """
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
