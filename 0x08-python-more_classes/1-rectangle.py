@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module that defines a class Rectangle.
+Module that defines a class Rectangle.
 """
 
 
@@ -14,12 +14,10 @@ class Rectangle:
         """
         Initializes a rectangle.
 
-
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
         """
-
         self.width = width
         self.height = height
 
@@ -29,11 +27,9 @@ class Rectangle:
         """
         Width retriver.
 
-
         Returns:
             int: The width of the rectangle.
         """
-
         return self.__width
 
 
@@ -42,10 +38,8 @@ class Rectangle:
         """
         Set the width of the rectangle.
 
-
         Args:
             value (int): Width of  the rectangle.
-
 
         Raises:
             TypeError: If width is not an integer.
@@ -63,11 +57,9 @@ class Rectangle:
         """
         Height retriver.
 
-
         Returns:
             int: The height of the rectangle.
         """
-
         return self.__height
 
     
@@ -76,16 +68,13 @@ class Rectangle:
         """
         Set the height of the rectangle.
 
-
         Args:
             value (int): height of the rectangle.
-
 
         Raises:
             TypeError: if height is not an integer.
             ValueError: if height is less than 0.
         """
-
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
