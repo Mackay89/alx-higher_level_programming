@@ -9,4 +9,4 @@ def matrix(m_a, m_b):
     Represent the multiply of two matrices.
 
     Args:
-        m_a (list of lists of ints/floats
+        m_a (list of lists of ints/float
