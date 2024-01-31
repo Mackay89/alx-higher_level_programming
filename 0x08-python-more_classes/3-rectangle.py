@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that defines a Rectangle class.
+Defines a Rectangle class.
 """
 
 
@@ -11,7 +11,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initialize a  Rectangle.
+        Initialize a  Rectangle with optional width and height.
 
 
         Args:
@@ -41,6 +41,9 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """
+        Set the height of the rectangle with type and value checking.
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
