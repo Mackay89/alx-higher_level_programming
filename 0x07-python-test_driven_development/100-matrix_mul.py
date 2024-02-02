@@ -24,11 +24,11 @@ def matrix_mul(m_a, m_b):
     """
 
     if not isinstance(m_a, list) or not isinstance(m_b, list):
-        raise TypeError("m_a and m_b must be a lists")
+        raise TypeError("m_a or m_b must be a lists")
 
 
     if not all(isinstance(row, list) for row in m_a) or not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_a and m_b must be a lists")
+        raise TypeError("m_a and m_b must be a lists of lists")
     
 
     if not m_a or any(not row for row in m_a):
