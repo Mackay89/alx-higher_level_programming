@@ -6,11 +6,11 @@ Module that defines a matrix multiplication function.
 
 def matrix_mul(m_a, m_b):
     """
-    This function multiplies of two matrices.
+    This module contain a function that multiplies of two matrices.
 
     Args:
-        m_a (list of lists of ints/float): Matrix to be multiplied.
-        m_b (list of lists of int/float): Mtrix to be multiplied
+        m_a (list of lists of int/float): Matrix to be multiplied.
+        m_b (list of lists of int/float): Matrix to be multiplied.
     Raises:
         TypeError: If m_a or m_b is not a list
         TypeError: If m_a or m_b is not a list of lists
