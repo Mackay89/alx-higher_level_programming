@@ -56,14 +56,21 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    matrix1 = [[m_b[j][i] for j in range(len(m_b))] for i in range(len(m_b[0]))]
+    matrix1 = []
+    for i in range(len(m_b[0])):
+        my_row = []
+        for j in range(len(m_b)):
+            my_row.append(m_b[j][i])
+        matrix1.append(my_row)
 
-    matrix2 =  [
-        [
-            sum(row[m] * column[m] for m in range(len(matrix1[0])))
-            for column in matrix1
-        ]
-        for row in m_a
-    ]
+    matrix2 = []
+    for row in m_a:
+        my_row = []
+        for colum in matrix1:
+            product = 0
+            for m in range(len(matrix1[0])):
+                product += row[m] * colum[m]
+            my_row.append(product)
+        matrix2.append(my_row)
 
     return matrix2
