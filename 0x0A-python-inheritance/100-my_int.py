@@ -7,7 +7,7 @@ Module that defines a class MyInt that inherits from int.
 
 class MyInt(int):
     """
-    Invert int operators == and != .
+    Invert int operators == and !=.
     """
 
     def __eq__(self, value):
@@ -21,3 +21,9 @@ class MyInt(int):
         Override != operator with == behavior.
         """
         return self.real == value
+
+    def __str__(self):
+        """
+        Override __str__ method to display the value correctly.
+        """
+        return str(self.real)
