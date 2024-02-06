@@ -2,7 +2,7 @@
 """
 Module that defines a class Rectangle that inherits from BaseGeometry.
 """
-BaseGeometry = __iport__("7-base_geometry").BaseGeometry
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 
@@ -12,16 +12,16 @@ class Rectangle(BaseGeometry):
     """
 
 
-    def __init__(self, widt, height):
+    def __init__(self, width, height):
         """
-        Intialize a Rectangle.
+        Initialize a Rectangle.
 
 
         Args:
             width (int): The width of the Rectangle.
             height (int): The height of the Rectangle.
         """
-        self.integer-validator("width", width)
+        self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
         self.height = height
