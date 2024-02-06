@@ -29,7 +29,7 @@ class Rectangle(BaseGeometry):
         """
         return self.__width * self.__height
 
-    def __str__self):
+    def __str__(self):
         """
         Return the print() and str() representation of Rectangle.
         """
