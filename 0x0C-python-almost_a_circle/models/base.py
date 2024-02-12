@@ -52,7 +52,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         return "[]"
-    return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -63,7 +63,7 @@ class Base:
             list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
-        with open(filename "w") as jsonfile:
+        with open(filename, "w") as jsonfile:
             if list_objs is None:
                 jsonfile.write("[]")
             else:
@@ -99,7 +99,7 @@ class Base:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
-                new cls(1)
+                new = cls(1)
             new.update(**dictionary)
             return new
     
@@ -109,7 +109,7 @@ class Base:
         """
         Returns a list of  instances.
 
-        Reads from '<cls._-name__>.json'.
+        Reads from '<cls.__name__>.json'.
 
         Returns:
             If the file does not exist - an empty list.
@@ -133,7 +133,7 @@ class Base:
             list_objs (list): Alist of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
-        with open(filname, 'w' newline="") as csvfile:
+        with open(filname, 'w', newline="") as csvfile:
             if list_objs is None or list_objs == []:
                 csvfile.write("[]")
             else:
@@ -191,18 +191,18 @@ class Base:
             turt.up()
             turt.goto(rect.x, rect.y)
             turt.down()
-            for i in range(2)
-        for rect in list_rectangles:
-            turt.showturtle()
-            turt.up()
-            turt.goto(rect.x, rect.y)
-            turt.down()
             for i in range(2):
-                turt.forward(rect.width)
-                turt.left(90)
-                turt.forward(rect.height)
-                turt.left(90)
-            turt.hideturtle()
+                for rect in list_rectangles:
+                    turt.showturtle()
+                    turt.up()
+                    turt.goto(rect.x, rect.y)
+                    turt.down()
+                    for i in range(2):
+                        turt.forward(rect.width)
+                        turt.left(90)
+                        turt.forward(rect.height)
+                        turt.left(90)
+                        turt.hideturtle()
 
 
         turt.color("#b5e3d8")
@@ -219,13 +219,3 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-
-
-
-
-
-
-
-
-
-
