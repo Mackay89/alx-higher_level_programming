@@ -171,7 +171,7 @@ class Rectangle(Base):
         [print("") for y in range(self.__y)]
         for i in range(self.__height):
             [print(" ", end="") for x in range(self.__x)]
-            [print('#', end"") for w in range(self.__width)]
+            [print('#', end="") for w in range(self.__width)]
             print("")
 
 
@@ -186,7 +186,7 @@ class Rectangle(Base):
 
         # print("args {}".format(type(args)))
         # print("kwargs {}".format(type(kwargs)))
-        if args is not None and len(args) is not 0:
+        if args is not None and len(args) != 0:
             list_atrr = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, list_atrr[i], args[i])

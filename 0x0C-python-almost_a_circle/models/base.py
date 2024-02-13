@@ -124,7 +124,7 @@ class Base:
             return []
 
 
-    @classmathod
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """
         Serializes a list of rectangles or square in CSV file.
