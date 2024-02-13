@@ -95,13 +95,14 @@ class Base:
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
-        if dictinary and dictinary != {}:
+        if dictionary and dictinary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(1, 1)
-            else:
-                new = cls(1)
-            new.update(**dictionary)
-            return new
+                new_instance = cls(1, 1)
+                new_instance.update(**dictionary)
+            elif cls.__name__ == "Square":
+                new_instance = cls(1)
+                new_instance.update(**dictionary)
+            return new_instance
     
 
     @classmethod
@@ -130,20 +131,21 @@ class Base:
         Serializes a list of rectangles or square in CSV file.
 
         Args:
-            list_objs (list): Alist of inherited Base instances.
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
-        with open(filname, 'w', newline="") as csvfile:
+        with open(filename, 'w', newline="") as csvfile:
             if list_objs is None or list_objs == []:
                 csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
-                    dictionary = ["id", "width", "height", "x", "y"]
+                    fieldnames = ["id", "width", "height", "x", "y"]
+
                 else:
-                    dictionary = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(csvfile, dictinary=dictionary)
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
-                    writer.writerow(obj.t_dictionary())
+                    writer.writerow(obj.to_dictionary())
 
 
     @classmethod
