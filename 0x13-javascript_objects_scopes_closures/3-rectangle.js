@@ -6,17 +6,25 @@ class Rectangle {
 		if (w > 0 && h > 0) {
 			this.width = w;
 			this.height = h;
+		} else {
+			this.width = 0;
+			this.height = 0;
 		}
 	}
 
 
 	print() {
-		for  (let i = 0; i < this.height; i++) {
-			let s = '';
+		if (this.width === 0 || this.height === 0) {
+			return;
+		}
+
+
+		for (let i = 0; i < this.height; i++) {
+			let k = '';
 			for (let j = 0; j < this.width; j++) {
-				s += 'X';
+				k += 'X';
 			}
-			console.log(s);
+			console.log(k);
 		}
 	}
 }
