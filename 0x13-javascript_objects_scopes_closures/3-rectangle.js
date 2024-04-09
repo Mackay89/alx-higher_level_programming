@@ -1,13 +1,16 @@
 #!/usr/bin/node
+
+
 class Rectangle {
-	contructor (w, h) {
-		if ((w > 0) && (h > 0)) {
+	constructor(w, h) {
+		if (w > 0 && h > 0) {
 			this.width = w;
 			this.height = h;
 		}
 	}
 
-	print () {
+
+	print() {
 		for  (let i = 0; i < this.height; i++) {
 			let s = '';
 			for (let j = 0; j < this.width; j++) {
@@ -17,3 +20,6 @@ class Rectangle {
 		}
 	}
 }
+
+
+module.eports = Rectangle;
