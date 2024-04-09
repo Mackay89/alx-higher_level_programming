@@ -30,4 +30,4 @@ class Rectangle {
 }
 
 
-module.eports = Rectangle;
+module.exports = Rectangle;
