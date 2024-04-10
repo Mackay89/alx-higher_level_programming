@@ -1,19 +1,19 @@
 #!/usr/bin/node
-const SquareP = require('./5-square');
+const SquareP = require('./5-square.js');
 
 
 class Square extends SquareP {
-	CHARpRINT (C) {
-		if (c === undefined) {
+	charPrint (c) {
+		if (!c) {
 			c = 'X';
 		}
 		for (let i = 0; i < this.height; i++) {
-			let s = '';
+			let k = '';
 			for (let j = 0; j < this.width; j++) {
-				s += c;
+				k += c;
 			}
 
-			console.log(s);
+			console.log(k);
 		}
 	}
 }
