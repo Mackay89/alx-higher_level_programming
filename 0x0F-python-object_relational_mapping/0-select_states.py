@@ -40,15 +40,15 @@ def select_states(username, password, database_name):
         db.close()
 
 
-    if __name__ == "__main__":
-        if len(sys.argv) != 4:
-            print("Usage: {} <username> <password> <database_name>".format(sys.argv[0]))
-            sys.exit(1)
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database_name>".format(sys.argv[0]))
+        sys.exit(1)
 
 
-        username = sys.argv[1]
-        pasword = sys.argv[2]
-        database_name = sys.argv[3]
+    username = sys.argv[1]
+    pasword = sys.argv[2]
+    database_name = sys.argv[3]
 
 
-        select_states(username, password, database_name)
+    
