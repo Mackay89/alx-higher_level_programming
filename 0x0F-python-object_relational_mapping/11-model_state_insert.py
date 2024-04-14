@@ -11,13 +11,12 @@ from model_state import Base, State
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.foramt(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     n_state = State(name="Louisiana")
     session.add(n_state)
-    n_state = session.query(state).filter_by(name='Louisiana').first()
     print(n_state.id)
     session.commit()
