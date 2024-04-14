@@ -5,6 +5,7 @@ This script prints the State object with the name passed as argument from the da
 import sys
 from relationship_state import Base, State
 from relationship_city import City
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
