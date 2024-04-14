@@ -6,7 +6,7 @@ This script start link class to table in database.
 
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine 
+from sqlalchemy import (create_engine) 
 
 
 if __name__ == "__main__":
