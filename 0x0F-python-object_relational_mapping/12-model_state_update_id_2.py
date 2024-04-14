@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script prints the first State object from the database hbtn_0e_6_usa.
+This script changes the name of a State object from the database hbtn_0e_6_usa.
 """
 
 
@@ -15,9 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    first = session.query(State).order_by(State.id).first()
-    if first is None:
-        print("{}: {}".format(first.id, first.name))
-    else:
-        print("Nothing")
-    session.close()
+    new_state = session.query(State).filter_by(id=2).first()
+    new_state.name = 'New Mexico'
+    session.commit()
+
+
