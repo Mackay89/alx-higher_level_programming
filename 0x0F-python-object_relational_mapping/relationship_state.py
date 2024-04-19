@@ -2,7 +2,7 @@
 """
 This script contains state class and Base, an instance of declarative_base()
 """
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -14,7 +14,9 @@ class State(Base):
     """
     Class with id and name attribute of each state
     """
-    __tablename__ = 'state'
-    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    __tablename__ = 'states'
+
+
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="states")
+    cities = relationship("City", backref="state")
