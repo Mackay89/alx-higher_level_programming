@@ -4,6 +4,11 @@
 if [ -z "$1" ]; then
     echo "Usage: $0 <URL>"
     exit 1
-if
+fi
 
-curl -s "$1" | wc -c 
+
+response=$(curl -s -o /dev/null -w "%{http_code}" "$1")
+if [ "$response" = "200" ]; then 
+	curl -s "$1"
+fi
+
