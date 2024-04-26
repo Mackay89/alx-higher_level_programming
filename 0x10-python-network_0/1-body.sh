@@ -1,5 +1,3 @@
 #!/bin/bash
-#Script that takes in a URL, sends a GET request to the URL, and displays the body of the response
-
-
-if [ "$(curl -sLI "$1" -X GET | grep "200 OK" | cut -d' ' -f2)" = '200' ]; then curl -sL "$1"; fi
+# Script that takes in a URL, sends a GET request to the URL, and displays the body of the response
+curl -sl "$1" -X GET -D ./header -o ./output; if grep -q "200 OK" ./header; then cat ./output; fi
