@@ -15,9 +15,9 @@ def x_request_id(url):
     """
     try:
         with urllib.request.urlopen(url) as response:
-            request_id = response.headers.get("X-Request-Id")
-            if request_id:
-                print(request_id)
+            x_request_id = response.headers.get("X-Request-Id")
+            if x_request_id:
+                print(x_request_id)
             else:
                 print("No X-Request-Id found in the response headers.")
     except Exception as e:
