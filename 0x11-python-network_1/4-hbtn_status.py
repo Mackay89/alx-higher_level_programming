@@ -2,8 +2,6 @@
 """
 Script that fetches https://alx-intranet.hbtn.io/status
 """
-
-
 import requests
 
 
@@ -16,5 +14,5 @@ if __name__ == "__main__":
 
 
     print("Body resp:")
-    print("\t- type:", type(body))
-    print("\t- content:", body)
+    print("\t- Type:", type(body))
+    print("\t- Content:", body)
