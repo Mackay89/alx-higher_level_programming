@@ -6,7 +6,7 @@ import urllib.request
 
 
 if __name__ == "__main__":
-    url = urllib.request.Request("https://alx-intranet.hbtn.io/status")
+    url = urllib.request("https://alx-intranet.hbtn.io/status")
     with urllib.request.urlopen(url) sa response:
         body = response.read()
         print("body response:")
