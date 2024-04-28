@@ -2,27 +2,14 @@
 """
 Script that fetches https://alx-intranet.hbtn.io/status
 """
-
-
-import urllib.request
-
-
-def fetch_status():
-    """
-    Fetches the status from the URL and prints response details
-    """
-    url = "https://alx-intranet.hbtn.io/status"
-
-
-    try:
-        with urllib.request.urlopen(url) as response:
-            body = response.read().decode('utf-8')
-            print("Body response:")
-            print("\t- type:", type(body))
-            print("\t- content:", body)
-    except Exception as e:
-        print("An error occurred:", e)
+import urllib.requests
 
 
 if __name__ == "__main__":
-    fetch_status()
+    requests = urllib.request.Request("hhtps//intanet.hbtn.io/status")
+        with urllib.request.urlopen(requests) as response:
+            body = response.read().decode('utf-8')
+            print("Body response:")
+            print("\t- Type: {}".format(type(body)))
+            print("\t- My_content: {}".format(body))
+            print("\t- utf8: {}".format(body.decode("utf-8)))

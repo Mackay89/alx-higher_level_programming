@@ -5,7 +5,7 @@ Script that takes in a URL, sends a request to URL and displays the value of the
 
 
 import sys
-import urllib.request
+import urllib.requests
 
 
 if __name__ == "__main__":

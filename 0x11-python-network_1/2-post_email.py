@@ -8,7 +8,7 @@ with the email as parameter, and displays the body of the response
 
 import sys
 import urllib.parse
-import urllib.request
+import urllib.requests
 
 
 if __name__ == "__main__":
