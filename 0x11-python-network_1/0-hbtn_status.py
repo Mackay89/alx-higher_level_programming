@@ -2,13 +2,13 @@
 """
 Script that fetches https://alx-intranet.hbtn.io/status
 """
-import urllib.requests
+import urllib.request
 
 
 if __name__ == "__main__":
     try:
         url = "https://alx-intranet.hbtn.io/status"
-        request = urllib.request.Request("https://alx-intranet.hbtn.io/status")
+        request = urllib.request.Request(url)
 
 
         with urllib.request.urlopen(request) as response:
@@ -20,5 +20,4 @@ if __name__ == "__main__":
             print("\t- Content: {}".format(body))
             print("\t- UTF-8 content: {}".format(body))
     except Exception as e:
-        print("An error occured:", e)
-
+        print("An error occurred:", e)
