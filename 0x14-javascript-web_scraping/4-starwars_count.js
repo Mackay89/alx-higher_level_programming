@@ -6,7 +6,7 @@ const starWarsUri = process.argv[2];
 let times = 0;
 
 
-request(starWarsUri, function(error, response, body) {
+request(starWarsUri, function (error, response, body) {
   body = JSON.parse(body).results;
 
 
@@ -24,6 +24,7 @@ request(starWarsUri, function(error, response, body) {
     }
   }
   }
+
 
   console.log(times);
 });
