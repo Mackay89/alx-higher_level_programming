@@ -3,24 +3,14 @@
 
 const fs = require('fs')
 
-if (process.argv.length !== 3) {
-  console.error('Usage: node script.js <file_path>');
-  process.exit(1);
-}
+fs.readFile(process.argv[2], 'utf8', function (error, content) {
+  // Use fs.readFile() to read the contents of a file specified as a command-line argument
+  // 'utf8' specified the encoding of the file being  read
 
-
-const filePath = process.argv[2];
-
-
-fs.readFile(filePath, 'utf-8', function (err, data) {
-  if (err) {
-    if (err.code === 'ENOENT') {
-      console.error(`Error: File '${filePath}' does not exist.`);
-    } else {
-      console.error('Error reading file: ${err.message}');
-    }
-    process.exit(1);
-  } else {
-    process.stdout.write(data);
-  }
+   if (error) {
+     // If an error occcurs the file read the operation, the 'error' parameter will contain an error object.
+     console.error('Error reading the file:', error);
+   } else {
+     console.log(content);
+   }
 });
