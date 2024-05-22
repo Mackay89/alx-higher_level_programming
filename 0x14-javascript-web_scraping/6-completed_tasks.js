@@ -22,7 +22,7 @@ request(process.argv[2], function (error, response, body) {
       }
 
 
-      if (completed) ++completedTasksUsers[userId];
+      if (completed) ++completedTasksByUsers[userId];
     }
 
 

@@ -20,7 +20,7 @@ request(starWarsUri, function (error, response, body) {
 
 
     if (characterId === '18') {
-      time += 1;
+      times += 1;
     }
   }
   }
