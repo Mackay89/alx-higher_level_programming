@@ -4,8 +4,8 @@
 const request = require('request');
 
 
-const movieId = process.argvp[2];
-const apiUrl = 'https://swapi.dev/api/films/${moviesId}/';
+const movieId = process.argv[2];
+const apiUrl = 'https://swapi.dev/api/films/${movieId}/';
 
 
 request(apiUrl, function (error, response, body) {
@@ -22,11 +22,11 @@ request(apiUrl, function (error, response, body) {
 
 
   const film = JSON.parse(body);
-  const charactersUrls = film,characters;
+  const charactersUrls = film.characters;
 
 
-  const	 getCharacterName = (Url) => {
-    return new Promise((resolve, reject) => }
+  const	 getCharacterName = (url) => {
+    return new Promise((resolve, reject) => {
       request(url, function (error, response, body) {
         if (error) {
           reject(error);
@@ -35,18 +35,17 @@ request(apiUrl, function (error, response, body) {
           resolve(character.name);
 	}
       });
-});
-};
-
-
-Promise.all(charactersUrls.map(getCharacterName))
-  .then((characters) => {
-    characters,forEach((character) => {
-      console.log(character);
     });
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-});
+  };
 
+
+  Promise.all(charactersUrls.map(getCharacterName))
+    .then((characters) => {
+      characters.forEach((character) => {
+        console.log(character);
+      });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+});
