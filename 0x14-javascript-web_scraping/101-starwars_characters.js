@@ -1,56 +1,38 @@
 #!/usr/bin/node
 
 
-const request = require('request');
+const request = require('request')
 
 
-function getDataFrom(url) {
-  return new Promise((resolve, reject) => {
-    request(url, (error, resp, body) => {
-       if (error) {
-	 reject(error);
-	} else {
-	  resolve(body);
-	}
+const movieId = process.argv[2];
+const base_Url = 'https://swapi-api.alx-tools.com/api/films/';
+const fullUrl = base_Url.concat(movieId);
+
+
+request(fullUrl, function (error, response, body) {
+  if (!error && response.statusCode === 200) {
+    const characters = JSON.parse(body).characters;
+    const characterPromises = characters.map(characterUrl => {
+      return new Promise((resolve, reject) => {
+        request(characterUrl, function (error, response, body) {
+          if (!error && response.statusCode === 200) {
+	    const characterData = JSON.parse(body).name;
+            resolve(characterData);
+	  } else {
+	    reject(new Error ('Failed to fetch character data'));
+	  }
+	});
     });
   });
-}
 
-
-function errorHandler(error) {
-  console.error(error);
-}
-
-
-async function printMovieCharacters(movieId) {
-  try {
-    const movieUri = 'https://swapi.dev/api/films/${movieId}';
-    const movieData = await getDataFrom(movieUri);
-    console.log("Movie Data:", movieData);
-    const movie = JSON.parse(movieData);
-    console.log("Movie:", movie);
-    const characters = movie.characters;
-    console.log("Character:", characters);
-
-
-    const promise = characters.map(characterUrl => getDataFrom(characterUrl));
-    const characterResponses = await Promise.all(promises);
-
-
-    for (const characterResponse of characterResponses) {
-      const character = JSON.parse(characterResponse);
-      console.log(character.name);
-    }
-  } catch (error) {
-    errorHandler(error);
-  }
-}
-
-
-  const movieId = process.argv[2];
-  if (!movieId) {
-    console.error("Please provide a movie ID.");
+  Promise.all(characterPromises)
+    .then(characterNames => {
+      console.log(characterNames.join('\n'));
+      })
+      .catch(error => {
+        console.error(error.message);
+      });
   } else {
-    printMovieCharacters(movieId)
+    console.error(error || 'Failed to fetch movie data', error);
   }
-
+});
